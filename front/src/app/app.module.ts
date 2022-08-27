@@ -11,6 +11,8 @@ import { PlayersComponent } from './components/players/players.component';
 import { TeamsComponent } from './components/teams/teams.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './components/nav/nav.component';
+import { HomeComponent } from './components/home/home.component';
+import { ImportleagueComponent } from './components/importleague/importleague.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { NavComponent } from './components/nav/nav.component';
     CompetitionsComponent,
     PlayersComponent,
     TeamsComponent,
-    NavComponent
+    NavComponent,
+    HomeComponent,
+    ImportleagueComponent
   ],
   imports: [
     BrowserModule,

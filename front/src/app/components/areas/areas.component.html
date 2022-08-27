@@ -17,11 +17,16 @@
           <tr *ngFor="let area of listAreas; index as i">
             <th scope="row">{{ i + 1 }}</th>
             <td>
-              <img [src]="area.flag" class="me-2" style="width: 20px" />
+              <img [src]="area.flag" class="me-2 flagArea" />
             </td>
             <td>{{ area.name }}</td>
             <td>{{ area.parent_area }}</td>
             <td>{{ area.country_code }}</td>
+          </tr>
+          <tr *ngIf="listAreas.length == 0">
+            <td colspan="5">
+              <h4 class="text-center">No results found.</h4>
+            </td>
           </tr>
         </tbody>
       </table>

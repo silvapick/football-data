@@ -33,8 +33,7 @@
             <td>{{ team.venue }}</td>
             <td>{{ team.club_colors }}</td>
             <td>
-              <a
-                class="link-info"
+              <button type="button" class="btn btn-default"
                 popoverTitle="More info."
                 [autoClose]="true"
                 ngbPopover="Adress: {{ team.address }} -
@@ -42,7 +41,12 @@
                 #popover3="ngbPopover"
               >
                 &#8505;
-              </a>
+            </button>
+            </td>
+          </tr>
+          <tr *ngIf=" listTeams.length == 0 ">
+            <td colspan="5">
+              <h4 class="text-center">No results found.</h4>
             </td>
           </tr>
         </tbody>

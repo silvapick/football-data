@@ -5,27 +5,41 @@
     <div class="col">
       <table class="table table-striped table-hover border">
         <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Emblem</th>
-          <th scope="col">Name</th>
-          <th scope="col">Code</th>
-          <th scope="col">Plan</th>
-        </tr>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Emblem</th>
+            <th scope="col">Name</th>
+            <th scope="col">Code</th>
+            <th scope="col">Import League</th>
+          </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let competition of listCompetitions; index as i">
-          <th scope="row">{{ i + 1 }}</th>
-          <td>
-            <img [src]="competition.emblem_url" class="me-2" style="width: 20px">
-          </td>
-          <td>{{ competition.name }}</td>
-          <td>{{ competition.code }}</td>
-          <td>{{ competition.plan }}</td>
-        </tr>
+          <tr *ngFor="let competition of listCompetitions; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img *ngIf=" competition.emblem_url != ''"
+                [src]="competition.emblem_url"
+                class="me-2 flagCompetition"
+              />
+            </td>
+            <td>{{ competition.name }}</td>
+            <td>{{ competition.code }}</td>
+            <td>
+              <a
+                *ngIf="competition.code != ''"
+                routerLink="/importLeague/{{ competition.code }}"
+                class="link-success"
+                >Import League</a
+              >
+            </td>
+          </tr>
+          <tr *ngIf="listCompetitions.length == 0">
+            <td colspan="5">
+              <h4 class="text-center">No results found.</h4>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
-
