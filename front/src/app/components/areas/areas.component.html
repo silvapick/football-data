@@ -1,0 +1,30 @@
+<div class="container">
+  <h3>{{ title }}</h3>
+  <hr />
+  <div class="row">
+    <div class="col">
+      <table class="table table-striped table-hover border">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Flag</th>
+            <th scope="col">Area</th>
+            <th scope="col">Parent Area</th>
+            <th scope="col">Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let area of listAreas; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+              <img [src]="area.flag" class="me-2" style="width: 20px" />
+            </td>
+            <td>{{ area.name }}</td>
+            <td>{{ area.parent_area }}</td>
+            <td>{{ area.country_code }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

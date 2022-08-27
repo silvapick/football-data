@@ -1,0 +1,52 @@
+<div class="container">
+  <h3>{{ title }}</h3>
+  <hr />
+  <div class="row">
+    <div class="col">
+      <table class="table table-striped table-hover border">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th>Name</th>
+            <th>Tla</th>
+            <th>Web Site</th>
+            <th>Staduim</th>
+            <th>Colors</th>
+            <th>More</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let team of listTeams; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ team.name }}</td>
+            <td>{{ team.tla }}</td>
+            <td>
+              <a
+                href="#"
+                class="link-primary"
+                target="_blank"
+                *ngIf="team.website != ''"
+                href="{{ team.website }}"
+                >{{ team.website }}</a
+              >
+            </td>
+            <td>{{ team.venue }}</td>
+            <td>{{ team.club_colors }}</td>
+            <td>
+              <a
+                class="link-info"
+                popoverTitle="More info."
+                [autoClose]="true"
+                ngbPopover="Adress: {{ team.address }} -
+                founded in {{ team.founded }}"
+                #popover3="ngbPopover"
+              >
+                &#8505;
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
