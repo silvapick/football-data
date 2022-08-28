@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_USER: "admin"
+      MYSQL_DATABASE: "football_data"
+      MYSQL_PASSWORD: "abc123"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "abc123"
+    ports:
+      - 3310:3306
+    volumes:
+      - ./data:/mysql-data.d
+      - /data
+
+volumes:
+  mysql_volume:
+
+networks:
+  football-data-net:
+    driver: bridge

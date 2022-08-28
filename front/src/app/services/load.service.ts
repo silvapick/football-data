@@ -10,9 +10,11 @@ export class LoadListService {
     private httpClient: HttpClient
   ) { }
 
-  loadData(typeData: string){
+  loadData(url: string){
+
     return this.httpClient.get<any>(
-      'http://localhost:3333/' + typeData
+      'http://localhost:3333/' + url
     )
   }
+
 }

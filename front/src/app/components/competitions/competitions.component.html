@@ -26,7 +26,7 @@
             <td>{{ competition.code }}</td>
             <td>
               <a
-                *ngIf="competition.code != ''"
+                *ngIf="competition.code != null"
                 routerLink="/importLeague/{{ competition.code }}"
                 class="link-success"
                 >Import League</a
