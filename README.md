@@ -1,4 +1,4 @@
-#### Test Challenge Entravision
+# Test Challenge Entravision
 
 - Desde la terminal:
 	- Nos ubicamos en la carpeta /mysql e iniciamos el contenedor
