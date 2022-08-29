@@ -6,7 +6,7 @@
 	- Nos ubicamos en la carpeta /api y ejecutamos lo siguiente
         - 1. ```npm i```
 		- 2. ```node ace migration:run```
-		- 3. ```node ace db:ssed```
+		- 3. ```node ace db:seed```
         - 3. ```node ace serve```
 	- Nos ubicamos en la carpeta /front y ejecutamos lo siguiente
 		- 1. ```npm i```
