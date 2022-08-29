@@ -3,7 +3,7 @@ import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 export default class extends BaseSchema {
   protected tableName = 'teams'
 
-  public async up () {
+  public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
       table.string('name').notNullable()
@@ -15,10 +15,7 @@ export default class extends BaseSchema {
       table.string('founded')
       table.string('club_colors')
       table.string('venue')
-      table
-        .integer('area_id').unsigned().notNullable()
-        .references('areas.id')
-        .onDelete('CASCADE')
+      table.integer('area_id').unsigned().nullable().references('areas.id').onDelete('CASCADE')
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */
@@ -26,7 +23,7 @@ export default class extends BaseSchema {
     })
   }
 
-  public async down () {
+  public async down() {
     this.schema.dropTable(this.tableName)
   }
 }

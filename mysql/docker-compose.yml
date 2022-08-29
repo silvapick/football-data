@@ -14,8 +14,7 @@ services:
     ports:
       - 3310:3306
     volumes:
-      - ./data:/mysql-data.d
-      - /data
+      - ./db-data:/mysql-data.d
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 
 

@@ -14,11 +14,7 @@ export default class extends BaseSchema {
       table.string('position')
       table.string('shirt_number')
       table.dateTime('last_updated')
-      table.integer('team_id')
-        .unsigned()
-        .notNullable()
-        .references('teams.id')
-        .onDelete('CASCADE')
+      table.integer('team_id').unsigned().notNullable().references('teams.id').onDelete('CASCADE')
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */

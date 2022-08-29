@@ -12,12 +12,7 @@ export default class extends BaseSchema {
         .notNullable()
         .references('competitions.id')
         .onDelete('CASCADE')
-      table
-        .integer('team_id')
-        .unsigned()
-        .notNullable()
-        .references('teams.id')
-        .onDelete('CASCADE')
+      table.integer('team_id').unsigned().notNullable().references('teams.id').onDelete('CASCADE')
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL

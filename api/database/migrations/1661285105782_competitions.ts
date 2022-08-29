@@ -10,13 +10,7 @@ export default class extends BaseSchema {
       table.string('code')
       table.string('emblem_url').nullable()
       table.string('plan')
-      table
-        .integer('area_id').unsigned().notNullable()
-        .references('areas.id')
-        .onDelete('CASCADE')
-      /**
-       * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
-       */
+      table.integer('area_id').unsigned().nullable().references('areas.id').onDelete('CASCADE')
       table.timestamps()
     })
   }
