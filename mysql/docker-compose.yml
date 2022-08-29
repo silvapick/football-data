@@ -1,26 +1,18 @@
-version: "3.8"
+version: '3.8'
 
 services:
-  db:
-    image: mysql:5.7
-    container_name: mysql
-    restart: always
-    environment:
-      MYSQL_USER: "admin"
-      MYSQL_DATABASE: "football_data"
-      MYSQL_PASSWORD: "abc123"
-      MYSQL_ALLOW_EMPTY_PASSWORD: "abc123"
-      LANG: C.UTF-8
-    ports:
-      - 3310:3306
-    volumes:
-      - ./db-data:/mysql-data.d
-    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-
-
-volumes:
-  mysql_volume:
-
-networks:
-  football-data-net:
-    driver: bridge
+    db_mysql:
+        image: mysql:5.7
+        container_name: db_mysql
+        restart: always
+        environment:
+            MYSQL_USER: "admin"
+            MYSQL_DATABASE: "football_data"
+            MYSQL_PASSWORD: "abc123"
+            MYSQL_ALLOW_EMPTY_PASSWORD: "abc123"
+            LANG: C.UTF-8
+        ports:
+            - 3320:3306
+        volumes:
+            - ./db_mysql:/mysql-data.d
+        command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
