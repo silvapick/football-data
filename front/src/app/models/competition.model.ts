@@ -1,5 +1,4 @@
-export class Competition{
-
+export class Competition {
   constructor(
     public id: number,
     public name: string,

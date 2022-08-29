@@ -17,7 +17,5 @@ export default class IndexSeeder extends BaseSeeder {
   public async run() {
     await this.runSeeder(await import('../Area'))
     await this.runSeeder(await import('../Competition'))
-    await this.runSeeder(await import('../Team'))
-    await this.runSeeder(await import('../Player'))
   }
 }

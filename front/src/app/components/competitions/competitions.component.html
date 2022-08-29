@@ -17,7 +17,8 @@
           <tr *ngFor="let competition of listCompetitions; index as i">
             <th scope="row">{{ i + 1 }}</th>
             <td>
-              <img *ngIf=" competition.emblem_url != ''"
+              <img
+                *ngIf="competition.emblem_url != ''"
                 [src]="competition.emblem_url"
                 class="me-2 flagCompetition"
               />

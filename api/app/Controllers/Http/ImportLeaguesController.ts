@@ -2,11 +2,8 @@ import ImportLeagueUseCase from 'App/UseCases/ImportLeagueUseCase'
 
 export default class ImportLeaguesController {
 
-  constructor(private importLeagueUseCase: ImportLeagueUseCase) {}
-
+  // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
   importLeague({ params }) {
-
-    return this.importLeagueUseCase.getData( params.code )
+    return ImportLeagueUseCase.getData(params.code)
   }
 }
-

@@ -11,6 +11,7 @@ export class ImportleagueComponent implements OnInit {
   listData: [] = [];
   code = '';
   url = '';
+  loading = true
 
   constructor(
     private LoadListService: LoadListService,
@@ -18,13 +19,12 @@ export class ImportleagueComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
-    this.code = this.routeActived.snapshot.params['code']
-    this.url = 'importLeague/' + this.code + '/teams'
+    this.code = this.routeActived.snapshot.params['code'];
+    this.url = 'importLeague/' + this.code + '/teams';
 
     this.LoadListService.loadData(this.url).subscribe((data: any) => {
-      this.listData = data
-
+      this.listData = data;
+      this.loading = false
     });
   }
 }

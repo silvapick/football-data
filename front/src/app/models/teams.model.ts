@@ -1,5 +1,4 @@
-export class Team{
-
+export class Team {
   constructor(
     public id: number,
     public areaId: number | null,

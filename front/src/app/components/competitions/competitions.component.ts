@@ -5,25 +5,19 @@ import { LoadListService } from 'src/app/services/load.service';
 @Component({
   selector: 'app-competitions',
   templateUrl: './competitions.component.html',
-  styleUrls: ['./competitions.component.css']
+  styleUrls: ['./competitions.component.css'],
 })
 export class CompetitionsComponent implements OnInit {
+  title = 'List of Competitions';
+  listCompetitions: Competition[] = [];
 
-  title = 'List of Competitions'
-  listCompetitions: Competition[] = []
-
-  constructor(
-    private LoadListService: LoadListService
-  ) { }
+  constructor(private LoadListService: LoadListService) {}
 
   ngOnInit(): void {
-
-    this.LoadListService.loadData('competitions')
-      .subscribe(
-        (competitions: any) => {
-          this.listCompetitions = competitions
-        }
-    )
+    this.LoadListService.loadData('competitions').subscribe(
+      (competitions: any) => {
+        this.listCompetitions = competitions;
+      }
+    );
   }
-
 }

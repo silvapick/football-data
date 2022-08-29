@@ -1,8 +1,23 @@
 <div class="container">
   <h3>{{ title }}</h3>
   <hr />
+  <div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">Important!</h4>
+    <p>
+      You must enter the
+      <a class="alert-link" routerLink="/competitions"> competitions</a>
+      and import the data of teams and players to be able to view the
+      information.
+    </p>
+    <hr />
+    <p class="mb-0">
+      Initially you will not see any information until you import a league.
+    </p>
+  </div>
   <div class="shadow-lg p-3 mb-5 bg-body rounded border">
-    <h5><a class="nav-link" routerLink="/areas" aria-current="page">Areas</a></h5>
+    <h5>
+      <a class="nav-link" routerLink="/areas" aria-current="page">Areas</a>
+    </h5>
   </div>
   <div class="shadow-lg p-3 mb-5 bg-body rounded border">
     <h5><a class="nav-link" routerLink="/competitions">Competitions</a></h5>

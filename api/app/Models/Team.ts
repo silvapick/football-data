@@ -15,6 +15,9 @@ export default class Team extends BaseModel {
   @column({ columnName: 'tla' })
   public tla: string
 
+  @column({ columnName: 'crest' })
+  public crest: string
+
   @column({ columnName: 'address' })
   public address: string
 

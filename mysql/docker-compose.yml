@@ -10,11 +10,14 @@ services:
       MYSQL_DATABASE: "football_data"
       MYSQL_PASSWORD: "abc123"
       MYSQL_ALLOW_EMPTY_PASSWORD: "abc123"
+      LANG: C.UTF-8
     ports:
       - 3310:3306
     volumes:
       - ./data:/mysql-data.d
       - /data
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
 
 volumes:
   mysql_volume:
