@@ -47,6 +47,8 @@ Route.get('/players/team/:teamId', 'PlayersController.getByTeamId')
 
 Route.get('/importLeague/:code/teams', 'ImportLeaguesController.importLeague')
 
+Route.get('/changeTeam/:playerId/:teamId', 'PlayersController.changeTeamPlayer')
+
 Route.get('*', async () => {
   return { error: '404' }
 })

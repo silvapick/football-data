@@ -1,5 +1,6 @@
 // import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Player from 'App/Models/Player'
+import ChangeTeamPlayerUseCase from 'App/UseCases/ChangeTeamPlayerUseCase'
 
 export default class PlayersController {
   public async index() {
@@ -17,5 +18,10 @@ export default class PlayersController {
       teamQuery.where('id', params.teamId)
     })
     return playersTeam
+  }
+
+  public async changeTeamPlayer({ params }) {
+    let player = ChangeTeamPlayerUseCase.setNewTeamPlayer(params.playerId, params.teamId)
+    return player
   }
 }
